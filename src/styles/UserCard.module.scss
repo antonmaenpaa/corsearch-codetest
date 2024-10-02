@@ -1,0 +1,105 @@
+.userCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  padding-top: 1rem;
+
+  &:hover {
+    transform: translateY(-0.7rem);
+    box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.1);
+  }
+
+  .avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background: #f0f0f0;
+  }
+
+  .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .username {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  & > .address {
+      width: 90%;
+      padding-bottom: 0.5rem;
+      .title {
+        font-size: 0.9rem;
+        border-bottom: 0.01rem solid black;
+        margin-bottom: 0.2rem;
+      }
+      .street, .city, .zipcode {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        font-style: italic;
+
+        p {
+          margin: 0;
+          padding: 0 0 0 0.5rem;
+        }
+      }
+  }
+
+  & > .company {
+    border-top: 0.01rem solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    font-size: 0.5rem;
+
+    a {
+      text-decoration: none;
+      color: #000;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & > div.social {
+    border-top: 0.01rem solid black;
+    padding: 0.5rem 0;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+
+    .emailIcon {
+      width: 2rem;
+      height: 2rem;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .phoneIcon {
+      width: 1rem;
+      height: 1rem;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  } 
+}
+
