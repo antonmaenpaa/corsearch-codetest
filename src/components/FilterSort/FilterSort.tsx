@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FilterSortProps } from './FilterSort.types';
 import styles from '../../styles/FilterSort.module.scss';
 import SearchIcon from '../../assets/icons/SearchIcon';
@@ -17,6 +17,8 @@ const FilterSort = ({ onFilter, onSort }: FilterSortProps) => {
       key,
       ascending: prevState.key === key ? !prevState.ascending : true,
     }));
+
+    onSort(key, sortState.ascending);
   };
 
   return (

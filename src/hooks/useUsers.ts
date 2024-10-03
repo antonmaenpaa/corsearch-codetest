@@ -27,17 +27,10 @@ export const useUsers = () => {
   };
 
   const sortUsers = (key: keyof UserProps, ascending: boolean) => {
-    const sortedUsers = [...filteredUsers].sort((a, b) => {
-      const valueA = String(a[key]).toLowerCase();
-      const valueB = String(b[key]).toLowerCase();
-      
-      if (ascending) {
-        return valueA < valueB ? -1 : valueA > valueB ? 1 : 0;
-      } else {
-        return valueA > valueB ? -1 : valueA < valueB ? 1 : 0;
-      }
-    });
-    setFilteredUsers(sortedUsers);
+    const sorted = [...filteredUsers].sort((a, b) =>
+      ascending ? a[key].toString().localeCompare(b[key].toString()) : b[key].toString().localeCompare(a[key].toString())
+    );
+    setFilteredUsers(sorted);
   };
 
   return { users, filteredUsers, filterUsers, sortUsers, loading };
